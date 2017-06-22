@@ -18,22 +18,21 @@ function createTweet(input){ //utworzeny zostaje link z tweetami i podpięty pod
     
     var textTweet = "Cytat dnia: " + quoteText + "Autor: " + quoteAuthor;
 
-    if (tweetText.length > 140) {
-    // sprawdzenie długości cytatu, jeśli dłuższy niż 140 znaków to wywołujemy ponownie funkcję qetQuote;
-        getQuote;
-    } else {
-        var tweet = tweetLink + encodeURIComponent(tweetText); //link + text
-        $('.quote').text(quoteText);  // element gdzie wyświetlamy cytat
-        $('.author').text("Author: " + quoteAuthor); // element gdzie pojawia się autor
-        $('.tweet').attr('href', tweet); // wybieramy element z klasą tweet i zmieniamy atrybut href na url tweeta
-    }
-    
-    $(document).ready(function() {
+    if (textTweet.length > 140) {
+    getQuote();
+} else {
+    var tweet = tweetLink + encodeURIComponent(textTweet);
+    $('.quote').text(quoteText);
+    $('.author').text("Autor: " + quoteAuthor);
+    $('.tweet').attr('href', tweet);
+}
+           
+}
+
+$(document).ready(function() {
     getQuote();
     $('.trigger').click(function() {
         getQuote();
     })
 });
-        
-}
 
