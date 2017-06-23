@@ -15,5 +15,9 @@ function getJoke() {  // pobranie dowcipu
     paragraph.innerHTML = response.value.joke; //z odpowiedzi wybieramy dowcip i wsadzamy w paragraf
   });
   xhr.send(); //wysłanie zapytania 
+    
+    if(request.status == 404) {
+	console.log('rtt');
+}
 }
 
